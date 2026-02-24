@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		875667162F4DF78E00F6C519 /* off_state.png in Resources */ = {isa = PBXBuildFile; fileRef = 875667132F4DF78E00F6C519 /* off_state.png */; };
+		875667172F4DF78E00F6C519 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 875667122F4DF78E00F6C519 /* README.md */; };
+		875667182F4DF78E00F6C519 /* on_state.png in Resources */ = {isa = PBXBuildFile; fileRef = 875667142F4DF78E00F6C519 /* on_state.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		875666F62F4DF76C00F6C519 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 875666E02F4DF76A00F6C519 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 875666E72F4DF76A00F6C519;
+			remoteInfo = NeumorphicToggle;
+		};
+		875667002F4DF76C00F6C519 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 875666E02F4DF76A00F6C519 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 875666E72F4DF76A00F6C519;
+			remoteInfo = NeumorphicToggle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		875666E82F4DF76A00F6C519 /* NeumorphicToggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeumorphicToggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		875666F52F4DF76C00F6C519 /* NeumorphicToggleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeumorphicToggleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		875666FF2F4DF76C00F6C519 /* NeumorphicToggleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeumorphicToggleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		875667122F4DF78E00F6C519 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		875667132F4DF78E00F6C519 /* off_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off_state.png; sourceTree = "<group>"; };
+		875667142F4DF78E00F6C519 /* on_state.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on_state.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		875666EA2F4DF76A00F6C519 /* NeumorphicToggle */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NeumorphicToggle;
+			sourceTree = "<group>";
+		};
+		875666F82F4DF76C00F6C519 /* NeumorphicToggleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NeumorphicToggleTests;
+			sourceTree = "<group>";
+		};
+		875667022F4DF76C00F6C519 /* NeumorphicToggleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NeumorphicToggleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		875666E52F4DF76A00F6C519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		875666F22F4DF76C00F6C519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		875666FC2F4DF76C00F6C519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		875666DF2F4DF76A00F6C519 = {
+			isa = PBXGroup;
+			children = (
+				875667122F4DF78E00F6C519 /* README.md */,
+				875667152F4DF78E00F6C519 /* Screenshots */,
+				875666EA2F4DF76A00F6C519 /* NeumorphicToggle */,
+				875666F82F4DF76C00F6C519 /* NeumorphicToggleTests */,
+				875667022F4DF76C00F6C519 /* NeumorphicToggleUITests */,
+				875666E92F4DF76A00F6C519 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		875666E92F4DF76A00F6C519 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				875666E82F4DF76A00F6C519 /* NeumorphicToggle.app */,
+				875666F52F4DF76C00F6C519 /* NeumorphicToggleTests.xctest */,
+				875666FF2F4DF76C00F6C519 /* NeumorphicToggleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		875667152F4DF78E00F6C519 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				875667132F4DF78E00F6C519 /* off_state.png */,
+				875667142F4DF78E00F6C519 /* on_state.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		875666E72F4DF76A00F6C519 /* NeumorphicToggle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 875667092F4DF76C00F6C519 /* Build configuration list for PBXNativeTarget "NeumorphicToggle" */;
+			buildPhases = (
+				875666E42F4DF76A00F6C519 /* Sources */,
+				875666E52F4DF76A00F6C519 /* Frameworks */,
+				875666E62F4DF76A00F6C519 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				875666EA2F4DF76A00F6C519 /* NeumorphicToggle */,
+			);
+			name = NeumorphicToggle;
+			packageProductDependencies = (
+			);
+			productName = NeumorphicToggle;
+			productReference = 875666E82F4DF76A00F6C519 /* NeumorphicToggle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		875666F42F4DF76C00F6C519 /* NeumorphicToggleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8756670C2F4DF76C00F6C519 /* Build configuration list for PBXNativeTarget "NeumorphicToggleTests" */;
+			buildPhases = (
+				875666F12F4DF76C00F6C519 /* Sources */,
+				875666F22F4DF76C00F6C519 /* Frameworks */,
+				875666F32F4DF76C00F6C519 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				875666F72F4DF76C00F6C519 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				875666F82F4DF76C00F6C519 /* NeumorphicToggleTests */,
+			);
+			name = NeumorphicToggleTests;
+			packageProductDependencies = (
+			);
+			productName = NeumorphicToggleTests;
+			productReference = 875666F52F4DF76C00F6C519 /* NeumorphicToggleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		875666FE2F4DF76C00F6C519 /* NeumorphicToggleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8756670F2F4DF76C00F6C519 /* Build configuration list for PBXNativeTarget "NeumorphicToggleUITests" */;
+			buildPhases = (
+				875666FB2F4DF76C00F6C519 /* Sources */,
+				875666FC2F4DF76C00F6C519 /* Frameworks */,
+				875666FD2F4DF76C00F6C519 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				875667012F4DF76C00F6C519 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				875667022F4DF76C00F6C519 /* NeumorphicToggleUITests */,
+			);
+			name = NeumorphicToggleUITests;
+			packageProductDependencies = (
+			);
+			productName = NeumorphicToggleUITests;
+			productReference = 875666FF2F4DF76C00F6C519 /* NeumorphicToggleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		875666E02F4DF76A00F6C519 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					875666E72F4DF76A00F6C519 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					875666F42F4DF76C00F6C519 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 875666E72F4DF76A00F6C519;
+					};
+					875666FE2F4DF76C00F6C519 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 875666E72F4DF76A00F6C519;
+					};
+				};
+			};
+			buildConfigurationList = 875666E32F4DF76A00F6C519 /* Build configuration list for PBXProject "NeumorphicToggle" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 875666DF2F4DF76A00F6C519;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 875666E92F4DF76A00F6C519 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				875666E72F4DF76A00F6C519 /* NeumorphicToggle */,
+				875666F42F4DF76C00F6C519 /* NeumorphicToggleTests */,
+				875666FE2F4DF76C00F6C519 /* NeumorphicToggleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		875666E62F4DF76A00F6C519 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				875667162F4DF78E00F6C519 /* off_state.png in Resources */,
+				875667172F4DF78E00F6C519 /* README.md in Resources */,
+				875667182F4DF78E00F6C519 /* on_state.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		875666F32F4DF76C00F6C519 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		875666FD2F4DF76C00F6C519 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		875666E42F4DF76A00F6C519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		875666F12F4DF76C00F6C519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		875666FB2F4DF76C00F6C519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		875666F72F4DF76C00F6C519 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 875666E72F4DF76A00F6C519 /* NeumorphicToggle */;
+			targetProxy = 875666F62F4DF76C00F6C519 /* PBXContainerItemProxy */;
+		};
+		875667012F4DF76C00F6C519 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 875666E72F4DF76A00F6C519 /* NeumorphicToggle */;
+			targetProxy = 875667002F4DF76C00F6C519 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		875667072F4DF76C00F6C519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		875667082F4DF76C00F6C519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8756670A2F4DF76C00F6C519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperiontech.NeumorphicToggle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8756670B2F4DF76C00F6C519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperiontech.NeumorphicToggle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8756670D2F4DF76C00F6C519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperiontech.NeumorphicToggleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeumorphicToggle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NeumorphicToggle";
+			};
+			name = Debug;
+		};
+		8756670E2F4DF76C00F6C519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperiontech.NeumorphicToggleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeumorphicToggle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NeumorphicToggle";
+			};
+			name = Release;
+		};
+		875667102F4DF76C00F6C519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperiontech.NeumorphicToggleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NeumorphicToggle;
+			};
+			name = Debug;
+		};
+		875667112F4DF76C00F6C519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CXAVAD5K7M;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperiontech.NeumorphicToggleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NeumorphicToggle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		875666E32F4DF76A00F6C519 /* Build configuration list for PBXProject "NeumorphicToggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				875667072F4DF76C00F6C519 /* Debug */,
+				875667082F4DF76C00F6C519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		875667092F4DF76C00F6C519 /* Build configuration list for PBXNativeTarget "NeumorphicToggle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8756670A2F4DF76C00F6C519 /* Debug */,
+				8756670B2F4DF76C00F6C519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8756670C2F4DF76C00F6C519 /* Build configuration list for PBXNativeTarget "NeumorphicToggleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8756670D2F4DF76C00F6C519 /* Debug */,
+				8756670E2F4DF76C00F6C519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8756670F2F4DF76C00F6C519 /* Build configuration list for PBXNativeTarget "NeumorphicToggleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				875667102F4DF76C00F6C519 /* Debug */,
+				875667112F4DF76C00F6C519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 875666E02F4DF76A00F6C519 /* Project object */;
+}
