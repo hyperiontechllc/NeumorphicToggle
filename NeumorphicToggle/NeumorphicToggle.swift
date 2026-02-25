@@ -36,7 +36,7 @@ public struct NeumorphicToggle: View {
                         width: side * 0.75,
                         height: side * 0.7
                     ) {
-                        withAnimation(.easeInOut(duration: 0.2)) {
+                        withAnimation(.easeInOut(duration: 0.15)) {
                             isOn.toggle()
                         }
                     }
