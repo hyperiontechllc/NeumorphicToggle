@@ -5,8 +5,8 @@ public struct NeumorphicToggleConfig {
     public let inactiveColor: Color
     
     public static let dark = NeumorphicToggleConfig(
-        activeColor: .green.opacity(0.9),
-        inactiveColor: .gray.opacity(0.4)
+        activeColor: Color(red: 0, green: 0.9, blue: 0, opacity: 0.9),
+        inactiveColor: Color(white: 0.4)
     )
 }
 
@@ -25,62 +25,49 @@ public struct NeumorphicToggle: View {
     public var body: some View {
         GeometryReader { proxy in
             let side = min(proxy.size.width, proxy.size.height)
-            let wellDiameter = side * 0.8
-            let knobWidth = side * 0.75
-            let knobHeight = side * 0.7
-            let liftOffset = side * 0.04
             
             ZStack {
-                ToggleOuterRing(size: side)
-                ToggleInnerWell(isOn: isOn, diameter: wellDiameter)
-                
-                ToggleKnobButton(
-                    isOn: isOn,
-                    config: config,
-                    width: knobWidth,
-                    height: knobHeight
-                ) {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        isOn.toggle()
+                ZStack {
+                    ToggleOuterRing(size: side)
+                    ToggleInnerWell(isOn: isOn, diameter: side * 0.8)
+                    ToggleKnobButton(
+                        isOn: isOn,
+                        config: config,
+                        width: side * 0.75,
+                        height: side * 0.7
+                    ) {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            isOn.toggle()
+                        }
                     }
+                    .offset(y: isOn ? -side * 0.04 : side * 0.04)
+                    ToggleInnerShadowMask(isOn: isOn, size: side * 0.8)
                 }
-                .offset(y: isOn ? -liftOffset : liftOffset)
-                
-                ToggleInnerShadowMask(
-                    isOn: isOn,
-                    size: wellDiameter
-                )
+                .drawingGroup()
             }
+            .shadow(color: .black.opacity(0.8), radius: side * 0.012, y: side * 0.003)
             .frame(width: side, height: side)
         }
         .aspectRatio(1, contentMode: .fit)
     }
 }
 
-private struct NoPressEffectButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-    }
-}
-
 private struct ToggleOuterRing: View {
     let size: CGFloat
+    private static let grad = LinearGradient(
+        colors: [Color(white: 0.27), Color(white: 0.13)],
+        startPoint: .top,
+        endPoint: .bottom
+    )
     
     var body: some View {
         Circle()
-            .fill(
-                LinearGradient(
-                    colors: [Color(white: 0.27), Color(white: 0.13)],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
+            .fill(Self.grad)
             .frame(width: size, height: size)
-            .shadow(color: .black.opacity(0.8), radius: size * 0.011, y: 1)
             .overlay(
                 Circle()
-                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
-                    .offset(y: 1)
+                    .stroke(Color.white.opacity(0.2), lineWidth: size * 0.003)
+                    .offset(y: size * 0.003)
                     .mask(Circle())
             )
     }
@@ -94,22 +81,16 @@ private struct ToggleInnerWell: View {
         Circle()
             .fill(
                 RadialGradient(
-                    colors: [
-                        isOn ? .black : .white.opacity(0.25),
-                        .black,
-                        .black
-                    ],
+                    colors: isOn
+                    ? [.black, .black, .black]
+                    : [.white.opacity(0.25), .black, .black],
                     center: .top,
                     startRadius: 0,
                     endRadius: diameter * 1.7
                 )
             )
             .frame(width: diameter, height: diameter)
-            .shadow(
-                color: .black.opacity(0.5),
-                radius: diameter * 0.047,
-                y: diameter * 0.047
-            )
+            .shadow(color: .black.opacity(0.5), radius: diameter * 0.05, y: diameter * 0.05)
     }
 }
 
@@ -124,14 +105,19 @@ private struct ToggleKnobButton: View {
         Button(action: action) {
             ZStack {
                 RoundedRectangle(cornerRadius: width / 2)
-                    .fill(knobBackgroundGradient)
-                
-                knobBorderHighlightLayer
-                
+                    .fill(
+                        RadialGradient(
+                            stops: isOn ? GradientStops.active : GradientStops.inactive,
+                            center: UnitPoint(x: 0.5, y: -0.2),
+                            startRadius: 0,
+                            endRadius: height
+                        )
+                    )
+                KnobStrokeLayer(isOn: isOn, width: width)
                 VStack {
-                    knobTopLabel
+                    knobLabel("I", isActive: isOn, activeColor: config.activeColor)
                     Spacer()
-                    knobBottomLabel
+                    knobLabel("O", isActive: !isOn, activeColor: .white.opacity(0.7))
                 }
                 .padding(.vertical, height * 0.05)
             }
@@ -140,95 +126,52 @@ private struct ToggleKnobButton: View {
         .buttonStyle(NoPressEffectButtonStyle())
     }
     
-    private var knobBackgroundGradient: RadialGradient {
-        RadialGradient(
-            stops: isOn ? activeGradientStops : inactiveGradientStops,
-            center: UnitPoint(x: 0.5, y: -0.2),
-            startRadius: 0,
-            endRadius: height
-        )
-    }
-    
-    private var knobBorderHighlightLayer: some View {
-        ZStack {
-            KnobStrokeLayer(
-                isOn: isOn,
-                opacity: 0.2,
-                activeRange: true,
-                width: width
-            )
-            
-            KnobStrokeLayer(
-                isOn: isOn,
-                opacity: 0.4,
-                activeRange: false,
-                width: width
-            )
-        }
-        .blur(radius: 0.5)
-    }
-    
-    private var knobTopLabel: some View {
-        Text("I")
+    private func knobLabel(
+        _ text: String,
+        isActive: Bool,
+        activeColor: Color
+    ) -> some View {
+        Text(text)
             .font(.system(size: width * 0.135, weight: .bold))
-            .foregroundColor(isOn ? config.activeColor : config.inactiveColor)
-            .shadow(color: isOn ? config.activeColor : .clear, radius: 4)
-            .shadow(color: isOn ? config.activeColor.opacity(0.8) : .clear, radius: 10)
-            .scaleEffect(y: isOn ? 1 : 0.85)
-            .opacity(isOn ? 1 : 0.6)
-    }
-    
-    private var knobBottomLabel: some View {
-        Text("O")
-            .font(.system(size: width * 0.135, weight: .bold))
-            .foregroundColor(!isOn ? .white.opacity(0.7) : config.inactiveColor)
-            .shadow(color: !isOn ? .white.opacity(0.7) : .clear, radius: 2)
-            .shadow(color: !isOn ? .white.opacity(0.4) : .clear, radius: 10)
-            .scaleEffect(y: !isOn ? 1 : 0.75)
-            .opacity(!isOn ? 1 : 0.6)
-    }
-    
-    private var activeGradientStops: [Gradient.Stop] {
-        [
-            .init(color: Color(hex: "#181818"), location: 0.00),
-            .init(color: Color(hex: "#1f1f1f"), location: 0.22),
-            .init(color: Color(hex: "#2a2a2a"), location: 0.50),
-            .init(color: Color(hex: "#3a3a3a"), location: 0.80),
-            .init(color: Color(hex: "#4a4a4a"), location: 1.00)
-        ]
-    }
-    
-    private var inactiveGradientStops: [Gradient.Stop] {
-        [
-            .init(color: Color(hex: "#131313"), location: 0.00),
-            .init(color: Color(hex: "#131313"), location: 0.60),
-            .init(color: Color(hex: "#1a1a1a"), location: 0.82),
-            .init(color: Color(hex: "#222222"), location: 0.93),
-            .init(color: Color(hex: "#2a2a2a"), location: 1.00)
-        ]
+            .foregroundColor(isActive ? activeColor : config.inactiveColor)
+            .shadow(color: isActive ? activeColor : .clear, radius: 4)
+            .shadow(color: isActive ? activeColor.opacity(0.8) : .clear, radius: 10)
+            .scaleEffect(y: isActive ? 1 : 0.85)
+            .opacity(isActive ? 1 : 0.6)
     }
 }
 
 private struct KnobStrokeLayer: View {
     let isOn: Bool
-    let opacity: Double
-    let activeRange: Bool
     let width: CGFloat
     
     var body: some View {
-        RoundedRectangle(cornerRadius: width / 2)
-            .stroke(
-                AngularGradient(
-                    gradient: Gradient(
-                        colors: [.clear, .white.opacity(opacity), .clear]
+        ZStack {
+            RoundedRectangle(cornerRadius: width / 2)
+                .stroke(
+                    AngularGradient(
+                        gradient: Gradient(colors: [.clear, .white.opacity(0.2), .clear]),
+                        center: .center,
+                        startAngle: .degrees(180),
+                        endAngle: .degrees(360)
                     ),
-                    center: .center,
-                    startAngle: .degrees(activeRange ? 180 : 0),
-                    endAngle: .degrees(activeRange ? 360 : 180)
-                ),
-                lineWidth: width * 0.0075
-            )
-            .opacity(isOn != activeRange ? 1 : 0)
+                    lineWidth: width * 0.0075
+                )
+                .opacity(isOn ? 0 : 1)
+            
+            RoundedRectangle(cornerRadius: width / 2)
+                .stroke(
+                    AngularGradient(
+                        gradient: Gradient(colors: [.clear, .white.opacity(0.4), .clear]),
+                        center: .center,
+                        startAngle: .degrees(0),
+                        endAngle: .degrees(180)
+                    ),
+                    lineWidth: width * 0.0075
+                )
+                .opacity(isOn ? 1 : 0)
+        }
+        .blur(radius: 0.5)
     }
 }
 
@@ -240,9 +183,7 @@ private struct ToggleInnerShadowMask: View {
         Circle()
             .stroke(
                 LinearGradient(
-                    colors: isOn
-                    ? [.black, .black, .clear]
-                    : [.clear, .black],
+                    colors: isOn ? [.black, .black, .clear] : [.clear, .black],
                     startPoint: .top,
                     endPoint: .bottom
                 ),
@@ -253,6 +194,30 @@ private struct ToggleInnerShadowMask: View {
             .mask(Circle())
             .frame(width: size, height: size)
     }
+}
+
+private struct NoPressEffectButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+    }
+}
+
+private struct GradientStops {
+    static let active: [Gradient.Stop] = [
+        .init(color: Color(white: 0.09), location: 0.00),
+        .init(color: Color(white: 0.12), location: 0.22),
+        .init(color: Color(white: 0.16), location: 0.50),
+        .init(color: Color(white: 0.23), location: 0.80),
+        .init(color: Color(white: 0.29), location: 1.00)
+    ]
+    
+    static let inactive: [Gradient.Stop] = [
+        .init(color: Color(white: 0.07), location: 0.00),
+        .init(color: Color(white: 0.07), location: 0.60),
+        .init(color: Color(white: 0.10), location: 0.82),
+        .init(color: Color(white: 0.13), location: 0.93),
+        .init(color: Color(white: 0.16), location: 1.00)
+    ]
 }
 
 #Preview {
